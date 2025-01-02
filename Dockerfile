@@ -1,0 +1,4 @@
+FROM postgres:13.2-alpine
+ENV POSTGRES_DB sportshop
+ENV POSTGRES_USER alexa
+ENV POSTGRES_PASSWORD myshop
