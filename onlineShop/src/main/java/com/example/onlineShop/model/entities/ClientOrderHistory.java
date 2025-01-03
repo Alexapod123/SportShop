@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "BUYER ORDER HISTORY")
 @Data
-public class BuyerOrderHistory {
+public class ClientOrderHistory {
     /**
      * Уникальный id записи в истории
      */
@@ -58,7 +58,7 @@ public class BuyerOrderHistory {
      * @param nameProduct название товара
      * @param pathToImg путь к изображению товара
      */
-    public BuyerOrderHistory(String clientName, String clientEmail, LocalDate dateOrder, String nameProduct, String pathToImg) {
+    public ClientOrderHistory(String clientName, String clientEmail, LocalDate dateOrder, String nameProduct, String pathToImg) {
         this.clientName = clientName;
         this.clientEmail = clientEmail;
         this.dateOrder = dateOrder;
@@ -69,5 +69,5 @@ public class BuyerOrderHistory {
     /**
      * Конструктор без параметров
      */
-    public BuyerOrderHistory(){}
+    public ClientOrderHistory(){}
 }

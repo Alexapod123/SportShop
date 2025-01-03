@@ -47,29 +47,39 @@ public class Order {
     private LocalDate dateOrder;
 
     /**
-     * Id товаров, добавленных в заказ
+     * Товары, добавленные в заказ
      */
     @Column(name = "PRODUCT ID")
-    private ArrayList<Long> productsId;
+    private ArrayList<Product> products;
+
+    /**
+     * Сумма заказа
+     */
+    @Column(name = "SUM")
+    private Double totalSum;
 
     /**
      * Конструктор с параметрами
-     * @param clientName имя покупателя
-     * @param clientEmail Электронная почта покупателя
+     *
+     * @param clientName      имя покупателя
+     * @param clientEmail     Электронная почта покупателя
      * @param deliveryAddress адрес доставки
-     * @param dateOrder дата заказа
-     * @param productsId список id заказанных товаров
+     * @param dateOrder       дата заказа
+     * @param products        список id заказанных товаров
+     * @param totalSum        Сумма заказа
      */
-    public Order(String clientName, String clientEmail, String deliveryAddress, LocalDate dateOrder, ArrayList<Long> productsId) {
+    public Order(String clientName, String clientEmail, String deliveryAddress, LocalDate dateOrder, ArrayList<Product> products, Double totalSum) {
         this.clientName = clientName;
         this.clientEmail = clientEmail;
         this.deliveryAddress = deliveryAddress;
         this.dateOrder = dateOrder;
-        productsId = new ArrayList<>();
+        products = new ArrayList<>();
+        this.totalSum = totalSum;
     }
 
     /***
      * Конструктор без параметров
      */
-    public Order(){ }
+    public Order() {
+    }
 }
