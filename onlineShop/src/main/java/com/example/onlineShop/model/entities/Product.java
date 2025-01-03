@@ -23,13 +23,13 @@ public class Product {
      * Наименование товара
      */
     @Column(name = "NAME")
-    private String name;
+    private String nameProduct;
 
     /***
      * Категория товара
      */
     @Column(name = "CATEGORY")
-    private String category;
+    private Category category;
 
     /**
      * Описание товара
