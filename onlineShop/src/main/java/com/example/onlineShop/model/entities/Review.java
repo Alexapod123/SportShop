@@ -54,6 +54,6 @@ public class Review {
      * Текст отзыва
      */
     @Column(name = "REVIEW")
-    private String review;
+    private String textReview;
 
 }

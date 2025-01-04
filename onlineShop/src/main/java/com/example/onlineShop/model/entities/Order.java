@@ -2,8 +2,9 @@ package com.example.onlineShop.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "ORDER")
 @Data
+@NoArgsConstructor
 public class Order {
     /**
      * Уникальный id заказа
@@ -43,8 +45,8 @@ public class Order {
     /***
      * Дата заказа
      */
-    @Column(name = "ORDER DATE")
-    private LocalDate dateOrder;
+    @Column(name = "ORDER DATE", columnDefinition = "timestamp default current_timestamp")
+    private LocalDateTime dateOrder = LocalDateTime.now();
 
     /**
      * Товары, добавленные в заказ
@@ -68,18 +70,12 @@ public class Order {
      * @param products        список id заказанных товаров
      * @param totalSum        Сумма заказа
      */
-    public Order(String clientName, String clientEmail, String deliveryAddress, LocalDate dateOrder, ArrayList<Product> products, Double totalSum) {
+    public Order(String clientName, String clientEmail, String deliveryAddress, LocalDateTime dateOrder, ArrayList<Product> products, Double totalSum) {
         this.clientName = clientName;
         this.clientEmail = clientEmail;
         this.deliveryAddress = deliveryAddress;
         this.dateOrder = dateOrder;
         products = new ArrayList<>();
         this.totalSum = totalSum;
-    }
-
-    /***
-     * Конструктор без параметров
-     */
-    public Order() {
     }
 }

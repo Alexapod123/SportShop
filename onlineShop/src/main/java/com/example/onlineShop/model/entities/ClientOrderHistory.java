@@ -2,6 +2,7 @@ package com.example.onlineShop.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "BUYER ORDER HISTORY")
 @Data
+@NoArgsConstructor
 public class ClientOrderHistory {
     /**
      * Уникальный id записи в истории
@@ -66,8 +68,4 @@ public class ClientOrderHistory {
         this.pathToImg = pathToImg;
     }
 
-    /**
-     * Конструктор без параметров
-     */
-    public ClientOrderHistory(){}
 }
