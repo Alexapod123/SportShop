@@ -51,7 +51,8 @@ public class Order {
     /**
      * Товары, добавленные в заказ
      */
-    @Column(name = "PRODUCT ID")
+    @Column(name = "PRODUCTs")
+    @ManyToMany
     private ArrayList<Product> products;
 
     /**
@@ -59,6 +60,9 @@ public class Order {
      */
     @Column(name = "SUM")
     private Double totalSum;
+
+    @ManyToOne
+    private User user;
 
     /**
      * Конструктор с параметрами

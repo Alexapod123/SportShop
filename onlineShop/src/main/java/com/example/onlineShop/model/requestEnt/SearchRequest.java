@@ -11,4 +11,6 @@ public class SearchRequest {
     private Category category;
     private Double price;
     private String nameProduct;
+    private String searchType;
+    private String text;
 }

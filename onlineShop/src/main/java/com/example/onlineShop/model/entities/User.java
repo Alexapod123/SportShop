@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -59,5 +60,7 @@ public class User {
     @CollectionTable(name = "userRole", joinColumns = @JoinColumn(name = "userId"))
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
+
+    private List<Product> products;
 
 }
