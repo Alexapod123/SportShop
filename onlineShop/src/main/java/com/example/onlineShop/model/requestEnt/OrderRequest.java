@@ -1,5 +1,6 @@
 package com.example.onlineShop.model.requestEnt;
 
+import com.example.onlineShop.constants.ErrorMsg;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -16,16 +17,16 @@ public class OrderRequest {
 
     private LocalDateTime dateOrder = LocalDateTime.now();
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.EMPTY_NAME)
     private String name;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.EMPTY_LAST_NAME)
     private String lastname;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.EMPTY_EMAIL)
     private String email;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.ADDRESS_EMPTY)
     private String address;
 
 }

@@ -13,4 +13,7 @@ public class ErrorMsg {
     public static final String INVALID_PASSWORD = "Password must be between 8 and 20 characters long";
     public static final String EMPTY_PASSWORD = "String \"password\" is empty";
     public static final String CAPTCHA_ERROR = "Fill captcha first";
+    public static final String ADDRESS_EMPTY = "String \"address\" is empty";
+    public static final String FILL_IN_THE_FIELD = "Fill in the field";
+    public static final String INVALID_VALUE = "Invalid value";
 }

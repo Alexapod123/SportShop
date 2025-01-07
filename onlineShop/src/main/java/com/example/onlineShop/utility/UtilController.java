@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
 
 @Controller
 public class UtilController {
-    public boolean checkInput(Model model, AdminResponse adminResponse, String key, String value) {
+    public boolean checkInput(Model model, AdminResponse adminResponse, String key, Object value) {
         if (adminResponse.getResponse().contains("success")) {
             model.addAttribute(adminResponse.getResponse(), adminResponse.getTextMessage());
             model.addAttribute(key, value);
@@ -25,7 +25,7 @@ public class UtilController {
         return false;
     }
 
-    public boolean checkInputs(BindingResult result, Model model, String key, String value) {
+    public boolean checkInputs(BindingResult result, Model model, String key, Object value) {
         if (result.hasErrors()) {
             model.mergeAttributes(getErrors(result));
             model.addAttribute(key, value);
@@ -58,25 +58,26 @@ public class UtilController {
             Collections.addAll(pagination, end);
             Integer[] arrayPag = pagination.toArray(new Integer[0]);
             return Arrays.stream(arrayPag).mapToInt(Integer::intValue).toArray();
-        }
-        else return IntStream.rangeClosed(1,totalPages).toArray();
+        } else return IntStream.rangeClosed(1, totalPages).toArray();
     }
 
-    public <T> void addPagination(Model model, Page<T> page){
+    public <T> void addPagination(Model model, Page<T> page) {
         model.addAttribute("pagination", generatePagination(page));
         model.addAttribute("page", page);
     }
-    public <T> void addPagination(SearchRequest request, Model model, Page<T> page){
+
+    public <T> void addPagination(SearchRequest request, Model model, Page<T> page) {
         model.addAttribute("searchRequest", request);
         addPagination(model, page);
     }
 
-    public String setAlertMsg(Model model, String page, AdminResponse adminResponse){
+    public String setAlertMsg(Model model, String page, AdminResponse adminResponse) {
         model.addAttribute("messageType", adminResponse.getResponse());
         model.addAttribute("message", adminResponse.getTextMessage());
-        return  page;
+        return page;
     }
-    public String setFlashMsg (RedirectAttributes redirectAttributes, String page, AdminResponse adminResponse){
+
+    public String setFlashMsg(RedirectAttributes redirectAttributes, String page, AdminResponse adminResponse) {
         redirectAttributes.addFlashAttribute("messageType", adminResponse.getResponse());
         redirectAttributes.addFlashAttribute("message", adminResponse.getTextMessage());
         return page;

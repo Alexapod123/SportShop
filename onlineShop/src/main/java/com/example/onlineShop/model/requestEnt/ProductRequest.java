@@ -1,5 +1,6 @@
 package com.example.onlineShop.model.requestEnt;
 
+import com.example.onlineShop.constants.ErrorMsg;
 import com.example.onlineShop.model.entities.Category;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -13,24 +14,24 @@ import org.hibernate.validator.constraints.Length;
 public class ProductRequest {
     private Long id;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
     @Length(max = 255)
     private String nameProduct;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
     @Length(max = 255)
     private Category category;
 
-    @NotBlank(message = )
+    @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
     @Length(max = 800)
     private String description;
 
-    @NotBlank(message = )
-    @Min(value = 1, message = )
+    @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
+    @Min(value = 1, message = ErrorMsg.INVALID_VALUE)
     private double price;
 
-    @NotBlank(message = )
-    @Min(value = 1, message = )
+    @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
+    @Min(value = 1, message = ErrorMsg.INVALID_VALUE)
     private int amount;
 
     private String pathToImg;
