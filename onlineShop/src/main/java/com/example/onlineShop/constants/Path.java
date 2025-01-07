@@ -10,4 +10,5 @@ public class Path {
     public static final String CART = "/cart";
     public static final String AUTH = "/auth";
     public static final String ERROR = "/error";
+    public static final String REVIEW = "/review";
 }

@@ -42,11 +42,7 @@ public class ProductController {
 
     @GetMapping
     public  String getProductsByPrice(SearchRequest request, Model model, Pageable pageable){
-        utilController.addPagination(request, model, productService.getProductsByPrice(request.getPrice(), request.getPrice(), pageable));
+    utilController.addPagination(request, model, productService.getProductsByPrice(request.getPrice(), request.getPrice(), pageable));
         return Page.PRODUCTS;
     }
-
-
-
-
 }

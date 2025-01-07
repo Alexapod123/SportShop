@@ -8,19 +8,19 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestParam;
-//todo сервисы и контроллер
+
+import java.util.List;
 /**
  * Репозиторий для работы с отзывами
  */
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     /**
      * Поиск отзывов по id товара
-     *
+     * @param pageable пагинация результатов
      * @param productId id товара
-     * @param pageable  пагинация результатов
      * @return страница с отзывами на конкретный товар
      */
-    Page<Review> findByProductId(@RequestParam("productId") Long productId, Pageable pageable);
+    Page<Review> findByProductId(@Param("productId") Long productId, Pageable pageable);
 
     /**
      * Поиск отзывов пользователя

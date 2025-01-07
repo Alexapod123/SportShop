@@ -22,6 +22,7 @@ public class Page {
     public static final String ADMIN_USER_INFO = "admin-user-info";
     public static final String ERROR_404 = "Error 404: not found";
     public static final String ERROR_500 = "Error 500: server unavailable";
+    public static final String REVIEW = "review";
 
 
 }
