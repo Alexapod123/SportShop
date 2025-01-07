@@ -1,5 +1,6 @@
 package com.example.onlineShop.service.impl;
 
+import com.example.onlineShop.constants.ErrorMsg;
 import com.example.onlineShop.model.entities.Category;
 import com.example.onlineShop.model.entities.Product;
 import com.example.onlineShop.model.requestEnt.SearchRequest;
@@ -22,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findProductById(Long productId) {
         return productRepository.findById(productId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, //todo добавить ошибку ));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ErrorMsg.PRODUCT_NOT_FOUND));
     }
 
     @Override

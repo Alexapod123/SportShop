@@ -1,5 +1,7 @@
 package com.example.onlineShop.service.impl;
 
+import com.example.onlineShop.constants.ErrorMsg;
+import com.example.onlineShop.constants.SuccessMsg;
 import com.example.onlineShop.model.entities.Order;
 import com.example.onlineShop.model.entities.Product;
 import com.example.onlineShop.model.entities.User;
@@ -60,7 +62,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Order getOrder(Long orderId) {
         return orderRepository.findById(orderId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, //todo error))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ErrorMsg.ORDER_NOT_FOUND));
 
     }
 
@@ -72,27 +74,27 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Product findProductById(Long productId) {
         return productRepository.findById(productId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, //todo error))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ErrorMsg.PRODUCT_NOT_FOUND));
     }
 
     @Override
     @SneakyThrows
     @Transactional
     public AdminResponse editProduct(ProductRequest productRequest, MultipartFile multipartFile) {
-        return saveProduct(productRequest, multipartFile, //todo message)
+        return saveProduct(productRequest, multipartFile, SuccessMsg.PRODUCT_UPDATED);
     }
 
     @Override
     @SneakyThrows
     @Transactional
     public AdminResponse addProduct(ProductRequest productRequest, MultipartFile multipartFile) {
-        return saveProduct(productRequest, multipartFile, //todo message)
+        return saveProduct(productRequest, multipartFile, SuccessMsg.PRODUCT_ADD);
     }
 
     @Override
     public UserResponse getUserById(Long userId, Pageable pageable) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, //todo error))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ErrorMsg.USER_NOT_FOUND));
         Page<Order> orders = orderRepository.getByUserId(userId, pageable);
         return new UserResponse(user, orders);
     }
@@ -110,6 +112,6 @@ public class AdminServiceImpl implements AdminService {
             product.setPathToImg(resultFileName);
         }
         productRepository.save(product);
-        return new AdminResponse("saved", //todo message)
+        return new AdminResponse("saved", SuccessMsg.PRODUCT_ADD);
     }
 }

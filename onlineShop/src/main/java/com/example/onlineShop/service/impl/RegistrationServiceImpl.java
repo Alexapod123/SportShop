@@ -1,5 +1,7 @@
 package com.example.onlineShop.service.impl;
 
+import com.example.onlineShop.constants.ErrorMsg;
+import com.example.onlineShop.constants.SuccessMsg;
 import com.example.onlineShop.model.entities.Role;
 import com.example.onlineShop.model.entities.User;
 import com.example.onlineShop.model.requestEnt.UserRequest;
@@ -32,25 +34,25 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Value("${recaptcha.secret}")
     private String secret;
 
-    //TODO добавить ответы ошибок
+
     @Override
     @Transactional
     public AdminResponse registration(String captchaResponse, UserRequest userRequest) {
-        if (userRequest.getPassword() != null) {
-            return new AdminResponse("passwordError", );
+        if (userRequest.getPassword().equals(null)) {
+            return new AdminResponse("passwordError", ErrorMsg.EMPTY_PASSWORD);
         }
         if (userRepository.findByEmail(userRequest.getEmail()) != null) {
-            return new AdminResponse("emailError", );
+            return new AdminResponse("emailError", ErrorMsg.EMAIL_IS_BUSY);
         }
         String url = String.format(captchaUrl, secret, captchaResponse);
         CaptchaResponse response = template.postForObject(url, Collections.emptyList(), CaptchaResponse.class);
         if (response.isSuccess()) {
-            return new AdminResponse("captchaError", )
+            return new AdminResponse("captchaError", ErrorMsg.CAPTCHA_ERROR);
         }
         User user = mapper.map(userRequest, User.class);
         user.setRole(Collections.singleton(Role.CLIENT));
         user.setPassword(encoder.encode(user.getPassword()));
         userRepository.save(user);
-        return new AdminResponse("registrationSuccess", );
+        return new AdminResponse("registrationSuccess", SuccessMsg.REGISTRATION_SUCCESS);
     }
 }
