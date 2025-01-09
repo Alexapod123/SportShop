@@ -18,44 +18,44 @@ public class Product {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
     /**
      * Наименование товара
      */
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "name_product", nullable = false)
     private String nameProduct;
 
     /***
      * Категория товара
      */
-    @Column(name = "CATEGORY", nullable = false)
+    @Column(name = "category", nullable = false)
     private Category category;
 
     /**
      * Описание товара
      */
-    @Column(name = "DESCRIPTION", nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
 
     /**
      * Цена товара
      */
-    @Column(name = "PRICE", nullable = false)
+    @Column(name = "price", nullable = false)
     private Double price;
 
     /***
      * Количество товара, доступного к заказу
      */
-    @Column(name = "AMOUNT", nullable = false)
+    @Column(name = "amount", nullable = false)
     private int amount;
 
 
     /**
      * Путь к изображению товара
      */
-    @Column(name = "IMAGE", nullable = false)
+    @Column(name = "image", nullable = false)
     private String pathToImg;
 
     /**

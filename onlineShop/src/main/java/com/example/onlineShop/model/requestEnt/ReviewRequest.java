@@ -18,4 +18,6 @@ public class ReviewRequest {
 
     private Optional<String> textReview;
 
+    public String userEmail;
+
 }

@@ -4,6 +4,7 @@ import com.example.onlineShop.constants.Page;
 import com.example.onlineShop.constants.Path;
 import com.example.onlineShop.service.ShoppingService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @RequestMapping(Path.CART)
 public class ShoppingController {
+    @Autowired
     private final ShoppingService shoppingService;
 
     @GetMapping
@@ -29,7 +31,7 @@ public class ShoppingController {
         return "redirect: " + Path.CART;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/remove")
     public String removeProductFromCart(@RequestParam("productId") Long productId){
         shoppingService.removeProductFromCart(productId);
         return "redirect: " + Path.CART;

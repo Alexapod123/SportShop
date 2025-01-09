@@ -8,6 +8,7 @@ import com.example.onlineShop.repositories.UserRepository;
 import com.example.onlineShop.service.UserService;
 import com.example.onlineShop.service.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    @Autowired
     private final UserRepository userRepository;
+    @Autowired
     private final OrderRepository orderRepository;
 
     @Override
@@ -25,9 +28,9 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(userPrincipal.getEmail());
     }
 
-    @Override
-    public Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable) {
-        User user = getAuthenticated();
-        return orderRepository.searchUserOrder(user.getId(), searchRequest.getSearchType(), searchRequest.getText(), pageable);
-    }
+//    @Override
+//    public Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable) {
+//        User user = getAuthenticated();
+//        return orderRepository.searchUserOrder(user.getId(), searchRequest.getSearchType(), searchRequest.getText(), pageable);
+//    }
 }

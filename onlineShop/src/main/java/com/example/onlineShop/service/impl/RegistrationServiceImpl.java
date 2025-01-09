@@ -11,6 +11,7 @@ import com.example.onlineShop.repositories.UserRepository;
 import com.example.onlineShop.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,15 +24,19 @@ import java.util.Collections;
 @Service
 @RequiredArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
+    @Autowired
     private final UserRepository userRepository;
+
     private final RestTemplate template;
+
     private final ModelMapper mapper;
+
     private final PasswordEncoder encoder;
 
 
-    @Value("${recaptcha.url}")
+    //@Value("${recaptcha.url}")
     private String captchaUrl;
-    @Value("${recaptcha.secret}")
+    //@Value("${recaptcha.secret}")
     private String secret;
 
 

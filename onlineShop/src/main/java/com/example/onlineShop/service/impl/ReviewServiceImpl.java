@@ -5,6 +5,7 @@ import com.example.onlineShop.model.requestEnt.ReviewRequest;
 import com.example.onlineShop.repositories.ReviewRepository;
 import com.example.onlineShop.service.ReviewService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 @Service
 @RequiredArgsConstructor
 public class ReviewServiceImpl implements ReviewService {
+    @Autowired
     private final ReviewRepository reviewRepository;
 
     @Override
@@ -32,7 +34,7 @@ public class ReviewServiceImpl implements ReviewService {
         Review review = new Review();
         review.setProductId(reviewRequest.getProductId());
         review.setRating(reviewRequest.getRating());
-        review.setClientEmail(userEmail);
+        review.setUserEmail(userEmail);
         if (reviewRequest.getTextReview().isPresent()){
             review.setTextReview(reviewRequest.getTextReview().map(t -> t.toString())
                     .orElse(null));

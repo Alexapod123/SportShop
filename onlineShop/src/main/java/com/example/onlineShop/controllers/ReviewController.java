@@ -6,6 +6,7 @@ import com.example.onlineShop.model.requestEnt.ReviewRequest;
 import com.example.onlineShop.service.ReviewService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping(Path.REVIEW)
 public class ReviewController {
+    @Autowired
     private final ReviewService reviewService;
 
     @GetMapping("/{productId}")

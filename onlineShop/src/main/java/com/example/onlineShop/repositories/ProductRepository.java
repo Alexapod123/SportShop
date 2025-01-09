@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -14,14 +15,9 @@ import java.util.List;
 /**
  * Репозиторий товаров
  */
+@Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    /**
-     * Поиск по id
-     *
-     * @param productsId id
-     * @return Товар с нужным id
-     */
-    List<Product> findById(@Param("productId") List<Long> productsId);
+
 
     /**
      * Поиск по категории
@@ -41,13 +37,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * @return страница с товарами
      */
     @Query("SELECT product FROM Product product WHERE" +
-            "(CASE" +
-            "WHEN :searchType = 'productName' THEN UPPER(product.productName)" +
-            "WHEN :searchType = 'category' THEN UPPER(product.category)" +
+            "(CASE " +
+            "   WHEN :searchType = 'nameProduct' THEN UPPER(product.nameProduct) " +
+       //     "   WHEN :searchType = 'category' THEN UPPER(category) " +
             "END)" +
             "LIKE UPPER(CONCAT('%',:text,'%')) " +
             "ORDER BY product.price ASC")
-    Page<Product> searchProducts(String searchType, String text, Pageable pageable);
+    Page<Product> searchProducts(Object searchType, String text, Pageable pageable);
 
     /**
      * Поиск по цене
@@ -57,8 +53,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * @param pageable пагинация результатов
      * @return страница с товарами
      */
-    @Query("SELECT product FROM Product product WHERE" +
-            "WHERE (coalesce(:priceMin, null) IS NULL OR perfume.price BETWEEN :priceMin AND :priceMax)" +
-            "ORDER BY perfume.price ASC")
+    @Query("SELECT product FROM Product product " +
+            "WHERE (coalesce(:priceMin, null) IS NULL OR product.price BETWEEN :priceMin AND :priceMax)" +
+            "ORDER BY product.price ASC")
     Page<Product> getProductsByPrice(Double priceMin, Double priceMax, Pageable pageable);
 }

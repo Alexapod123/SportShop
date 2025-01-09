@@ -8,6 +8,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface UserService {
     User getAuthenticated();
-    Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable);
+//    Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable);
 
 }

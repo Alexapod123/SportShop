@@ -3,7 +3,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/sportshop
     username: alexa
     password: myshop
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+
+
+

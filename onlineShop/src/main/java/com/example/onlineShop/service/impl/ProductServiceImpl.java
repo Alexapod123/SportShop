@@ -8,6 +8,7 @@ import com.example.onlineShop.repositories.ProductRepository;
 import com.example.onlineShop.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,9 @@ import org.springframework.web.server.ResponseStatusException;
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
+    @Autowired
     private final ProductRepository productRepository;
+    @Autowired
     private final ModelMapper mapper;
 
     @Override

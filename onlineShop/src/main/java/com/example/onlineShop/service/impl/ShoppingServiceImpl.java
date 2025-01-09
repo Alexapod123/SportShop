@@ -6,6 +6,7 @@ import com.example.onlineShop.repositories.ProductRepository;
 import com.example.onlineShop.service.ShoppingService;
 import com.example.onlineShop.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +14,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ShoppingServiceImpl implements ShoppingService {
+    @Autowired
     private final UserService userService;
+    @Autowired
     private final ProductRepository productRepository;
     @Override
     public List<Product> getProductInCart() {

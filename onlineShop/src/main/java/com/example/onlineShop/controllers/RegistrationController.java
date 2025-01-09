@@ -8,6 +8,7 @@ import com.example.onlineShop.service.RegistrationService;
 import com.example.onlineShop.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,8 +22,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequiredArgsConstructor
 @RequestMapping(Path.REGISTRATION)
 public class RegistrationController {
+
     private RegistrationService registrationService;
+    @Autowired
     private UtilController utilController;
+
     private AdminResponse adminResponse;
 
     @GetMapping()

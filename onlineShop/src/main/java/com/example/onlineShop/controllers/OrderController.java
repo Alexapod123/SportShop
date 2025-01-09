@@ -9,6 +9,7 @@ import com.example.onlineShop.service.UserService;
 import com.example.onlineShop.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +20,11 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping(Path.ORDER)
 public class OrderController {
+    @Autowired
     private final OrderService orderService;
+    @Autowired
     private final UtilController utilController;
+    @Autowired
     private final UserService userService;
 
     @GetMapping("/{orderId}")

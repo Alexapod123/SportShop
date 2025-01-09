@@ -9,7 +9,7 @@ import java.util.Date;
  * Отзыв
  */
 @Entity
-@Table(name = "REVIEW")
+@Table(name = "review")
 @Data
 public class Review {
     @Id
@@ -23,37 +23,37 @@ public class Review {
     /**
      * Id товара, на который дан отзыв
      */
-    @Column(name = "id product")
+    @Column(name = "id_product")
     private Long productId;
 
     /**
      * Дата отзыва
      */
-    @Column(name = "DATA")
+    @Column(name = "data")
     private Date dateReview;
 
     /**
      * Имя покупателя
      */
-    @Column(name = "CLIENT NAME")
+    @Column(name = "client_name")
     private  String clientName;
 
     /**
      * Электронная почта покупателя
      */
-    @Column(name = "CLIENT EMAIL")
-    private String clientEmail;
+    @Column(name = "client_email")
+    private String userEmail;
 
     /**
      * Оценка товара
      */
-    @Column(name = "RATING")
+    @Column(name = "rating")
     private Double rating;
 
     /**
      * Текст отзыва
      */
-    @Column(name = "REVIEW")
+    @Column(name = "review")
     private String textReview;
 
 }

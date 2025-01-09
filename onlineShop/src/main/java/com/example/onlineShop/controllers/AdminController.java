@@ -9,6 +9,7 @@ import com.example.onlineShop.service.AdminService;
 import com.example.onlineShop.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping(Path.ADMIN)
 @PreAuthorize("hasAuthority('ADMIN')")
 public class AdminController {
+    @Autowired
     private final AdminService adminService;
+    @Autowired
     private final UtilController utilController;
 
     @GetMapping("/products")

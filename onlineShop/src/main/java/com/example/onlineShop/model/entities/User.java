@@ -11,7 +11,7 @@ import java.util.Set;
  * Пользователь
  */
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 public class User {
@@ -32,8 +32,8 @@ public class User {
     /**
      * Фамилия пользователя
      */
-    @Column(name = "lastname", nullable = false)
-    private String lastname;
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
     /**
      * Электронная почта пользователя
@@ -61,6 +61,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
 
+    @ManyToMany
     private List<Product> products;
 
 }

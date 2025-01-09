@@ -16,6 +16,7 @@ import com.example.onlineShop.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,17 +27,22 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
-    @Value("${upload.path}")
+   // @Value("${upload.path}")
     private String uploadPath;
 
+    @Autowired
     private final UserRepository userRepository;
+    @Autowired
     private final OrderRepository orderRepository;
+    @Autowired
     private final ProductRepository productRepository;
+    @Autowired
     private final ModelMapper mapper;
 
     @Override
@@ -98,8 +104,8 @@ public class AdminServiceImpl implements AdminService {
         Page<Order> orders = orderRepository.getByUserId(userId, pageable);
         return new UserResponse(user, orders);
     }
-    @SneakyThrows
-    private AdminResponse saveProduct(ProductRequest productRequest, MultipartFile multipartFile, String message){
+
+    private AdminResponse saveProduct(ProductRequest productRequest, MultipartFile multipartFile, String message) throws IOException {
         Product product = mapper.map(productRequest, Product.class);
         if (multipartFile!=null && !multipartFile.getOriginalFilename().isEmpty()){
             File uploadDir = new File(uploadPath);
@@ -112,6 +118,6 @@ public class AdminServiceImpl implements AdminService {
             product.setPathToImg(resultFileName);
         }
         productRepository.save(product);
-        return new AdminResponse("saved", SuccessMsg.PRODUCT_ADD);
+        return new AdminResponse("saved", message);
     }
 }

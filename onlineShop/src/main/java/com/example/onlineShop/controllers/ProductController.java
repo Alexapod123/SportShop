@@ -7,6 +7,7 @@ import com.example.onlineShop.model.requestEnt.SearchRequest;
 import com.example.onlineShop.service.ProductService;
 import com.example.onlineShop.utility.UtilController;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @RequestMapping(Path.PRODUCT)
 public class ProductController {
+    @Autowired
     private final ProductService productService;
+    @Autowired
     private final UtilController utilController;
 
     @GetMapping("/{productId}")
@@ -39,7 +42,7 @@ public class ProductController {
         utilController.addPagination(request, model, productService.searchProducts(request, pageable));
         return Page.PRODUCTS;
     }
-
+//todo добавить путь
     @GetMapping
     public  String getProductsByPrice(SearchRequest request, Model model, Pageable pageable){
     utilController.addPagination(request, model, productService.getProductsByPrice(request.getPrice(), request.getPrice(), pageable));
