@@ -1,15 +1,11 @@
 spring:
-  application:
-    name: sportshop
   datasource:
     url: jdbc:postgresql://localhost:5432/sportshop
-    password: alexa
-    username: myshop
+    password: myshop
+    username: alexa
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
+
 
