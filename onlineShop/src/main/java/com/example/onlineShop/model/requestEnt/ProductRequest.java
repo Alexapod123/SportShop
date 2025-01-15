@@ -1,6 +1,6 @@
 package com.example.onlineShop.model.requestEnt;
 
-import com.example.onlineShop.constants.ErrorMsg;
+import com.example.onlineShop.model.constants.ErrorMsg;
 import com.example.onlineShop.model.entities.Category;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
