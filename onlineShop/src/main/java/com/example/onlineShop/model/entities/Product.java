@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name = "Product")
+@Table(name = "products")
 @Data
 @NoArgsConstructor
 public class Product {
@@ -30,7 +30,7 @@ public class Product {
     /***
      * Категория товара
      */
-    @Column(name = "category", nullable = false)
+   // @Column(name = "category", nullable = false)
     private Category category;
 
     /**

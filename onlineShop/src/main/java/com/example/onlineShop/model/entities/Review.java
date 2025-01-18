@@ -23,13 +23,13 @@ public class Review {
     /**
      * Id товара, на который дан отзыв
      */
-    @Column(name = "id_product")
+    @Column(name = "products_id")
     private Long productId;
 
     /**
      * Дата отзыва
      */
-    @Column(name = "data")
+    @Column(name = "date")
     private Date dateReview;
 
     /**
@@ -53,7 +53,7 @@ public class Review {
     /**
      * Текст отзыва
      */
-    @Column(name = "review")
+    @Column(name = "text_review")
     private String textReview;
 
 }

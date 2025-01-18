@@ -53,14 +53,14 @@ public class Order {
     /**
      * Товары, добавленные в заказ
      */
-    @Column(name = "products")
+
     @ManyToMany
     private ArrayList<Product> products = new ArrayList<>();
 
     /**
      * Сумма заказа
      */
-    @Column(name = "sum")
+    @Column(name = "total_sum")
     private Double totalSum;
 
     @ManyToOne
