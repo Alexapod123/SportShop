@@ -6,7 +6,7 @@ import com.example.onlineShop.model.requestEnt.ProductRequest;
 import com.example.onlineShop.model.requestEnt.SearchRequest;
 import com.example.onlineShop.model.responseEnt.UserResponse;
 import com.example.onlineShop.model.service.AdminService;
-import com.example.onlineShop.model.utility.UtilController;
+import com.example.onlineShop.controller.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

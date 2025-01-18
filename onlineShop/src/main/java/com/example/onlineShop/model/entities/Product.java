@@ -48,7 +48,7 @@ public class Product {
     /***
      * Количество товара, доступного к заказу
      */
-    @Column(name = "amount", nullable = false)
+    @Column(name = "amount", nullable = false) //todo добавить проверку
     private int amount;
 
 

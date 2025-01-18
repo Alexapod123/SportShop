@@ -7,7 +7,7 @@ import lombok.Data;
 import org.springframework.data.domain.Page;
 
 /**
- * Инфо для пользователя
+ * Инфо пользователя
  */
 @Data
 @AllArgsConstructor

@@ -5,7 +5,7 @@ import com.example.onlineShop.model.constants.Path;
 import com.example.onlineShop.model.entities.Category;
 import com.example.onlineShop.model.requestEnt.SearchRequest;
 import com.example.onlineShop.model.service.ProductService;
-import com.example.onlineShop.model.utility.UtilController;
+import com.example.onlineShop.controller.utility.UtilController;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

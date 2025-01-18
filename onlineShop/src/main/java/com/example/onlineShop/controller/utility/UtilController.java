@@ -1,4 +1,4 @@
-package com.example.onlineShop.model.utility;
+package com.example.onlineShop.controller.utility;
 
 import com.example.onlineShop.model.requestEnt.SearchRequest;
 import com.example.onlineShop.model.responseEnt.AdminResponse;

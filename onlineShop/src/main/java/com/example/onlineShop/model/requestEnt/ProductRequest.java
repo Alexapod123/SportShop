@@ -31,7 +31,7 @@ public class ProductRequest {
     private double price;
 
     @NotBlank(message = ErrorMsg.FILL_IN_THE_FIELD)
-    @Min(value = 1, message = ErrorMsg.INVALID_VALUE)
+    @Min(value = 0, message = ErrorMsg.INVALID_VALUE)
     private int amount;
 
     private String pathToImg;

@@ -5,7 +5,7 @@ import com.example.onlineShop.model.constants.Path;
 import com.example.onlineShop.model.requestEnt.UserRequest;
 import com.example.onlineShop.model.responseEnt.AdminResponse;
 import com.example.onlineShop.model.service.RegistrationService;
-import com.example.onlineShop.model.utility.UtilController;
+import com.example.onlineShop.controller.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

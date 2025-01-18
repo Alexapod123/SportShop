@@ -6,7 +6,7 @@ import com.example.onlineShop.model.entities.User;
 import com.example.onlineShop.model.requestEnt.OrderRequest;
 import com.example.onlineShop.model.service.OrderService;
 import com.example.onlineShop.model.service.UserService;
-import com.example.onlineShop.model.utility.UtilController;
+import com.example.onlineShop.controller.utility.UtilController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
