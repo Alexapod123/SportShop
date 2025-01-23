@@ -6,8 +6,11 @@ import com.example.onlineShop.model.requestEnt.SearchRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+/**
+ * Интерфейс сервиса для работы с пользователем
+ */
 public interface UserService {
     User getAuthenticated();
-//    Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable);
+
 
 }

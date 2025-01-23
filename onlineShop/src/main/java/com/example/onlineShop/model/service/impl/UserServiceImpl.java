@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Сервис для работы с пользователем
+ */
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -24,9 +27,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(userPrincipal.getEmail());
     }
 
-//    @Override
-//    public Page<Order> searchOrdersByUser(SearchRequest searchRequest, Pageable pageable) {
-//        User user = getAuthenticated();
-//        return orderRepository.searchUserOrder(user.getId(), searchRequest.getSearchType(), searchRequest.getText(), pageable);
-//    }
 }

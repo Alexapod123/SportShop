@@ -1,9 +1,11 @@
 package com.example.onlineShop.model.constants;
 
+/**
+ * Константы страниц
+ */
 public class Page {
     public static final String HOME = "home";
     public static final String REGISTRATION = "registration";
-    public static final String LOGIN = "login";
     public static final String CONTACTS = "contacts";
     public static final String CART = "cart";
     public static final String ORDER = "order";
@@ -14,7 +16,6 @@ public class Page {
     public static final String PRODUCTS = "products";
     public static final String USER_ACC = "user-account";
     public static final String USER_INFO = "information-about-user";
-    public static final String USER_UPDATE = "user-update";
     public static final String ADMIN_PRODUCTS = "admin-products";
     public static final String ADMIN_PRODUCTS_ADD = "admin-products-add";
     public static final String ADMIN_PRODUCTS_UPDATE = "admin-products-update";

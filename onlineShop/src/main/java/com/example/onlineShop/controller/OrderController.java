@@ -16,6 +16,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Контроллер для работы с заказами
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(Path.ORDER)

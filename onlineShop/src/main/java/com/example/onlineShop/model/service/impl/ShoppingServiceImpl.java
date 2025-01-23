@@ -1,4 +1,7 @@
 package com.example.onlineShop.model.service.impl;
+/**
+ * Сервис для работы с корзиной
+ */
 
 import com.example.onlineShop.model.entities.Product;
 import com.example.onlineShop.model.entities.User;

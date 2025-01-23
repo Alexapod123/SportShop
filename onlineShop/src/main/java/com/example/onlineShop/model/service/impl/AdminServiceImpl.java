@@ -29,10 +29,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+/**
+ * Сервис для админ. задач
+ */
 @Service
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
-   // @Value("${upload.path}")
+
     private String uploadPath;
 
     @Autowired

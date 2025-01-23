@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Контроллер для работы с пользователем
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(Path.USER)

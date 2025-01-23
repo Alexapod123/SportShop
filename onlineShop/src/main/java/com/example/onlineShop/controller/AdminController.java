@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ * контроллер для работы с админ. задачами
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(Path.ADMIN)

@@ -10,7 +10,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 @Data
-
+/**
+ * Создание пользователя
+ */
 public class UserPrincipal implements UserDetails {
     private final Long id;
     private final String email;

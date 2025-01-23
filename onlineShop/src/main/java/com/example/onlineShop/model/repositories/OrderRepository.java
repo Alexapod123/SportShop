@@ -70,14 +70,5 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
      * @param pageable   пагинация результатов
      * @return страница с результатами, удовлетворяющими запросу
      */
-//    @EntityGraph(attributePaths = {"products", "user"})
-//    @Query("SELECT orders FROM Order orders " +
-//            "LEFT JOIN orders.user user " +
-//            "WHERE user.id = :userId " +
-//            "AND (CASE " +
-//            "WHEN :searchType = 'clientName' THEN UPPER(orders.clientName) = UPPER(:text)" +
-//            "ELSE UPPER(orders.clientEmail) = UPPER(:text)" +
-//            "END) " +
-//            "LIKE UPPER (CONTACT('%',:text, '%'))")
-//    Page<Order> searchUserOrder(Long userId, String searchType, String text, Pageable pageable);
+
 }

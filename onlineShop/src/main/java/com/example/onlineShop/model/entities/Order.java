@@ -66,22 +66,4 @@ public class Order {
     @ManyToOne
     private User user;
 
-//    /**
-//     * Конструктор с параметрами
-//     *
-//     * @param clientName      имя покупателя
-//     * @param clientEmail     Электронная почта покупателя
-//     * @param deliveryAddress адрес доставки
-//     * @param dateOrder       дата заказа
-//     * @param products        список id заказанных товаров
-//     * @param totalSum        Сумма заказа
-//     */
-//    public Order(String clientName, String clientEmail, String deliveryAddress, LocalDateTime dateOrder, ArrayList<Product> products, Double totalSum) {
-//        this.clientName = clientName;
-//        this.clientEmail = clientEmail;
-//        this.deliveryAddress = deliveryAddress;
-//        this.dateOrder = dateOrder;
-//        products = new ArrayList<>();
-//        this.totalSum = totalSum;
-//    }
 }

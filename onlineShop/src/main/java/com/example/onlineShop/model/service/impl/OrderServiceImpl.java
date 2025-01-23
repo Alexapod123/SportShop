@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * Сервис для работы с заказами
+ */
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {

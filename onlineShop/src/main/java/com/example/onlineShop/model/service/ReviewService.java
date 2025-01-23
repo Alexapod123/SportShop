@@ -8,7 +8,9 @@ import org.springframework.security.core.parameters.P;
 
 import java.util.List;
 
-
+/**
+ * Интерфейс сервиса для работы с отзывами
+ */
 public interface ReviewService {
 
     Page<Review> findByProductId(Long productId, Pageable pageable);

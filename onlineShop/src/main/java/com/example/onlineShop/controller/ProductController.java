@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Контроллер для работы с товарами
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(Path.PRODUCT)
@@ -42,7 +45,7 @@ public class ProductController {
         utilController.addPagination(request, model, productService.searchProducts(request, pageable));
         return Page.PRODUCTS;
     }
-//todo добавить путь
+
     @GetMapping
     public  String getProductsByPrice(SearchRequest request, Model model, Pageable pageable){
     utilController.addPagination(request, model, productService.getProductsByPrice(request.getPrice(), request.getPrice(), pageable));

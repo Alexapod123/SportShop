@@ -12,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Контроллер для работы с отзывами
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(Path.REVIEW)

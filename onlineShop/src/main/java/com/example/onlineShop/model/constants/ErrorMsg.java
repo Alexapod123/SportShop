@@ -1,5 +1,8 @@
 package com.example.onlineShop.model.constants;
 
+/**
+ * Константы сообщений об ошибках
+ */
 public class ErrorMsg {
     public static final String EMAIL_NOT_FOUND = "Email not found";
     public static final String EMAIL_IS_BUSY = "Email already exists";

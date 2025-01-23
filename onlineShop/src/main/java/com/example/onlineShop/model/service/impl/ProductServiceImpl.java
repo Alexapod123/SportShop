@@ -15,6 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * Сервис для работы с товарами
+ */
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {

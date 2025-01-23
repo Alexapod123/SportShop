@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * Сервис для работы с отзывами
+ */
 @Service
 @RequiredArgsConstructor
 public class ReviewServiceImpl implements ReviewService {

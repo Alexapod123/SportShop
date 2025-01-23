@@ -14,6 +14,9 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Утилиты
+ */
 @Controller
 public class UtilController {
     public boolean checkInput(Model model, AdminResponse adminResponse, String key, Object value) {
