@@ -36,9 +36,9 @@ public class RegistrationServiceImpl implements RegistrationService {
     private final PasswordEncoder encoder;
 
 
-    //@Value("${recaptcha.url}")
+
     private String captchaUrl;
-    //@Value("${recaptcha.secret}")
+
     private String secret;
 
 
